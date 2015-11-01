@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		244B032E1BE3225000ABA74E /* showImageBig.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B032D1BE3225000ABA74E /* showImageBig.m */; };
 		244B033F1BE35C1000ABA74E /* showBigimageMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 244B033E1BE35C1000ABA74E /* showBigimageMore.m */; };
 		24E1C8681BE1C28200CC2CBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1C8671BE1C28200CC2CBC /* main.m */; };
 		24E1C86B1BE1C28200CC2CBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E1C86A1BE1C28200CC2CBC /* AppDelegate.m */; };
@@ -44,10 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		244B032C1BE3225000ABA74E /* showImageBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showImageBig.h; sourceTree = "<group>"; };
-		244B032D1BE3225000ABA74E /* showImageBig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showImageBig.m; sourceTree = "<group>"; };
 		244B033D1BE35C1000ABA74E /* showBigimageMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showBigimageMore.h; sourceTree = "<group>"; };
-		244B033E1BE35C1000ABA74E /* showBigimageMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showBigimageMore.m; sourceTree = "<group>"; };
+		244B033E1BE35C1000ABA74E /* showBigimageMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showBigimageMore.m; sourceTree = "<group>"; wrapsLines = 0; };
 		24E1C8631BE1C28200CC2CBC /* bigImageShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigImageShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E1C8671BE1C28200CC2CBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24E1C8691BE1C28200CC2CBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,8 +130,6 @@
 				24E1C89A1BE1C2A700CC2CBC /* showOneImagePictureController.m */,
 				244B033D1BE35C1000ABA74E /* showBigimageMore.h */,
 				244B033E1BE35C1000ABA74E /* showBigimageMore.m */,
-				244B032C1BE3225000ABA74E /* showImageBig.h */,
-				244B032D1BE3225000ABA74E /* showImageBig.m */,
 				24E1C86F1BE1C28200CC2CBC /* Main.storyboard */,
 				24E1C8721BE1C28200CC2CBC /* Assets.xcassets */,
 				24E1C8741BE1C28200CC2CBC /* LaunchScreen.storyboard */,
@@ -320,7 +315,6 @@
 			files = (
 				24E1C8AE1BE1C3B300CC2CBC /* showPictureViewController.m in Sources */,
 				24E1C89B1BE1C2A700CC2CBC /* showOneImagePictureController.m in Sources */,
-				244B032E1BE3225000ABA74E /* showImageBig.m in Sources */,
 				24E1C86E1BE1C28200CC2CBC /* ViewController.m in Sources */,
 				24E1C86B1BE1C28200CC2CBC /* AppDelegate.m in Sources */,
 				244B033F1BE35C1000ABA74E /* showBigimageMore.m in Sources */,

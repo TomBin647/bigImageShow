@@ -58,7 +58,7 @@
 }
 
 
-- (void)setDataource:(id<XLCycleScrollViewDatasource>)datasource
+- (void)setDataource:(id<GBCycleScrollViewDatasource>)datasource
 {
     _datasource = datasource;
     [self reloadData];
@@ -89,9 +89,14 @@
         v.userInteractionEnabled = YES;
         v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
         [_scrollView addSubview:v];
+        
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(handleTap:)];
+        [v addGestureRecognizer:singleTap];
     }
     
-    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
+    
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0) animated:YES];
 }
 
 - (void)getDisplayImagesWithCurpage:(int)page {
@@ -119,6 +124,14 @@
     
 }
 
+- (void)handleTap:(UITapGestureRecognizer *)tap {
+    
+    if ([_delegate respondsToSelector:@selector(didClickPage:atIndex:)]) {
+        [_delegate didClickPage:self atIndex:_curPage];
+    }
+    
+}
+
 - (void)setViewContent:(UIView *)view atIndex:(NSInteger)index
 {
     if (index == _curPage) {
@@ -126,6 +139,11 @@
         for (int i = 0; i < 3; i++) {
             UIView *v = [_curViews objectAtIndex:i];
             v.userInteractionEnabled = YES;
+            
+            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                        action:@selector(handleTap:)];
+            [v addGestureRecognizer:singleTap];
+            
             v.frame = CGRectOffset(v.frame, v.frame.size.width * i, 0);
             [_scrollView addSubview:v];
         }

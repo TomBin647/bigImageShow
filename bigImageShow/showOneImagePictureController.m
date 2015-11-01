@@ -58,11 +58,13 @@
 
 @interface showOneImagePictureController () <UIScrollViewDelegate>
 {
-CGFloat startContentOffsetX;
-
-CGFloat willEndContentOffsetX;
-
-CGFloat endContentOffsetX;
+    CGFloat startContentOffsetX;
+    
+    CGFloat willEndContentOffsetX;
+    
+    CGFloat endContentOffsetX;
+    
+    BOOL canPush;
 }
 
 
@@ -77,6 +79,9 @@ CGFloat endContentOffsetX;
 
 @property (nonatomic,strong) UIImage * imageOld;
 
+
+
+
 @end
 
 @implementation showOneImagePictureController
@@ -90,6 +95,8 @@ CGFloat endContentOffsetX;
         self.bounces = YES;
         self.pagingEnabled = NO;
         self.directionalLockEnabled = YES;
+        canPush = NO;
+        
         
         _imageOld =  [UIImage imageNamed:image];
         //在scroller 加入uiview
@@ -138,23 +145,13 @@ CGFloat endContentOffsetX;
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{    //将要停止前的坐标
     
     willEndContentOffsetX = scrollView.contentOffset.x;
+    canPush = YES;
     
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     endContentOffsetX = scrollView.contentOffset.x;
-    
-//    if (endContentOffsetX < willEndContentOffsetX && willEndContentOffsetX < startContentOffsetX) { //画面从右往左移动，前一页
-//        
-//        self.chooseIndex = [self validPageValue:self.chooseIndex-1];
-//        [self loadView];
-//    }
-//    
-//    if (endContentOffsetX > willEndContentOffsetX && willEndContentOffsetX > startContentOffsetX) {//画面从左往右移动，后一页
-//        self.chooseIndex = [self validPageValue:self.chooseIndex+1];
-//        [self loadView];
-//    }
     
     
 }
@@ -164,11 +161,12 @@ CGFloat endContentOffsetX;
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    NSLog(@"%f",scrollView.contentOffset.x);
+    NSLog(@"偏移量  %f",scrollView.contentOffset.x);
+    NSLog(@" %f",self.contentSize.width);
    //[self resignFirstResponder];
-    if (self.contentOffset.x+ GBMainViewWidth> self.contentSize.width + 20) {
+    if (self.contentOffset.x + GBMainViewWidth > self.contentSize.width + GBMainViewWidth/7 && canPush == YES) {
         NSLog(@"下一页");
-        
+        canPush = NO;
         if (self.tag == self.numberOfImage-1) {
             return;
         }
@@ -217,10 +215,10 @@ CGFloat endContentOffsetX;
     
     
     
-    if (self.contentOffset.x < -100) {
+    if (self.contentOffset.x  < -GBMainViewWidth/7 && canPush == YES) {
         NSLog(@"上一页");
         
-        
+        canPush = NO;
         
         [[NSNotificationCenter defaultCenter]postNotificationName:@"PushUp" object:[NSNumber numberWithInteger:self.tag]];
         [self resignFirstResponder];
@@ -270,6 +268,7 @@ CGFloat endContentOffsetX;
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
+    canPush = NO;
     [self centerContent];
 }
 -(void)centerContent {

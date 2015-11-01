@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "bigImageShow/showOneImagePictureController.m"
-            timestampString = "467890370.597857"
+            filePath = "bigImageShow/showBigimageMore.m"
+            timestampString = "468034585.279692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "-scrollViewDidScroll:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "bigImageShow/showOneImagePictureController.m"
-            timestampString = "467890373.404769"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "-scrollViewDidScroll:"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "-setViewContent:atIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

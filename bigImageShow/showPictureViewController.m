@@ -70,6 +70,21 @@
     return showOne;
 
 }
+
+- (void)didClickPage:(showBigimageMore *)csView atIndex:(NSInteger)index
+{
+    
+    [self.navigationController popViewControllerAnimated:NO];
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+//                                                    message:[NSString stringWithFormat:@"当前点击第%ld个页面",(long)index]
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"确定"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

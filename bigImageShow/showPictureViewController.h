@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "showImageBig.h"
 
 #import "showBigimageMore.h"
 
-@interface showPictureViewController : UIViewController<XLCycleScrollViewDatasource,XLCycleScrollViewDelegate>
+@interface showPictureViewController : UIViewController<GBCycleScrollViewDatasource,GBCycleScrollViewDelegate>
 
 
 @property (nonatomic,strong) NSString * fromWhere;

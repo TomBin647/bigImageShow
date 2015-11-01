@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol XLCycleScrollViewDelegate;
-@protocol XLCycleScrollViewDatasource;
+@protocol GBCycleScrollViewDelegate;
+@protocol GBCycleScrollViewDatasource;
 
 @interface showBigimageMore : UIView<UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
-    
-    //id<XLCycleScrollViewDelegate> delegate;
-    //id<XLCycleScrollViewDatasource> datasource;
     
     NSInteger _totalPages;
     NSInteger _curPage;
@@ -26,21 +23,23 @@
 
 @property (nonatomic,readonly) UIScrollView *scrollView;
 @property (nonatomic,assign) NSInteger currentPage;
-@property (nonatomic,assign,setter = setDataource:) id<XLCycleScrollViewDatasource> datasource;
-@property (nonatomic,assign,setter = setDelegate:) id<XLCycleScrollViewDelegate> delegate;
+@property (nonatomic,assign,setter = setDataource:) id<GBCycleScrollViewDatasource> datasource;
+@property (nonatomic,assign,setter = setDelegate:) id<GBCycleScrollViewDelegate> delegate;
 
 - (void)reloadData;
 - (void)setViewContent:(UIView *)view atIndex:(NSInteger)index;
 
 @end
 
-@protocol XLCycleScrollViewDelegate <NSObject>
+@protocol GBCycleScrollViewDelegate <NSObject>
+
+- (void)didClickPage:(showBigimageMore *)csView atIndex:(NSInteger)index;
 
 @optional
 
 @end
 
-@protocol XLCycleScrollViewDatasource <NSObject>
+@protocol GBCycleScrollViewDatasource <NSObject>
 
 @required
 - (NSInteger)numberOfPages;
