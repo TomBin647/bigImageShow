@@ -96,7 +96,7 @@
     }
     
     
-    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0) animated:YES];
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width, 0)];
 }
 
 - (void)getDisplayImagesWithCurpage:(int)page {
